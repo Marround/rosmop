@@ -1,0 +1,40 @@
+@import url(http://allfont.ru/allfont.css?fonts=roboto-thin);
+
+.main-lang {
+  height: 100vh;
+  width: 100%;
+  background: linear-gradient(to top, rgb(255,255,255), rgba(255,255,255,0)) 10%, url(/assets/img/main/i.jpg) no-repeat;
+  background-position: top;
+  background-size: cover;
+  display: flex;
+}
+.main-lang>div {
+  margin: auto 30px;
+}
+
+.label-container {
+  position: relative;
+}
+
+.org-label {
+  text-align: left;
+  /*font-family: ;*/
+}
+.org-label>h1 {
+  width: 100%;
+  font-size: 150px;
+}
+
+.org-label-blue {
+  color: blue;
+}
+
+.org-label-red {
+  color: red;
+}
+.org-label>h3 {
+  font-family: 'Roboto Thin', arial;
+  font-size: 50px;
+  font-weight: 600;
+  color: #333;
+}

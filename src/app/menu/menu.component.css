@@ -1,12 +1,42 @@
 nav {
   position: fixed;
   z-index: 10;
-  color: hsla(0,0%,100%,.87);
-  background-color: #3097D1 !important;
   padding: 8px 16px;
   flex-wrap: wrap;
   display: flex;
   width: 100%;
+  font-weight: bold;
+  background-color: rgba(255,255,255, .2);
+}
+
+.nav-colored {
+  background-color: #3097D1 !important;
+  color: hsla(0,0%,100%,.87);
+  animation: emergence 0.4s ease-in-out;
+}
+
+@keyframes emergence {
+  from {
+    background-color: transparent;
+  }
+  to{
+    background-color: #3097D1 !important;
+  }
+}
+
+@keyframes disappearance {
+  from {
+    background-color: #3097D1 !important;
+  }
+  to{
+    background-color: transparent;
+  }
+}
+
+nav a {
+  color: mintcream;
+  text-decoration: none;
+  text-shadow: 1px 1px 2px #111, 0 0 1em #222;
 }
 
 nav a:hover {
@@ -23,9 +53,4 @@ nav a.active {
   -moz-box-flex: 1;
   -ms-flex-positive: 1;
   flex-grow: 1;
-}
-
-.empty {
-  width: 100%;
-  height: 52px;
 }
