@@ -1,5 +1,9 @@
 @import url(http://allfont.ru/allfont.css?fonts=roboto-thin);
 
+.landing-container {
+  width: 100%;
+}
+
 .main-lang {
   height: 100vh;
   width: 100%;
@@ -37,4 +41,56 @@
   font-size: 50px;
   font-weight: 600;
   color: #333;
+}
+
+.about-org {
+  height: 446px;
+  width: 100%;
+  background: radial-gradient(60% 50%, rgba(255,255,255,0), rgb(255,255,255)), url(/assets/img/main/blue.png) no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+}
+
+.flex_box {
+  height: 446px;
+  width: 100%;
+  display: flex;
+}
+
+.flex-container {
+  margin: auto;
+}
+
+.reviews-org {
+  height: 446px;
+  width: 100%;
+  background: radial-gradient(60% 50%, rgba(255,255,255,0), rgb(255,255,255)), url(/assets/img/main/green.png) no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
+}
+
+.reviews-org-carousel-txt{
+  background: radial-gradient(40% 50%, rgb(255,255,255), rgba(255,255,255,0));
+  padding: 5px 15px;
+}
+.reviews-org-carousel-txt h3 {
+  color: #333;
+  font-size: 40px;
+  font-weight: 600;
+}
+.reviews-org-carousel-txt p {
+  color: #333;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.products-org {
+  height:  446px;
+  width: 100%;
+  background: radial-gradient(60% 50%, rgba(255,255,255,0), rgb(255,255,255)), url(/assets/img/main/orange.png) no-repeat;
+  background-position: center;
+  background-size: cover;
+  display: flex;
 }
