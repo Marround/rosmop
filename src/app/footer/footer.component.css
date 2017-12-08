@@ -1,0 +1,22 @@
+p {
+  font-size: 15px;
+  font-weight: 100;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+.docs-footer {
+  background: #3097D1 !important;
+  color: hsla(0,0%,100%,.87);
+  margin-top: 40px;
+  font-size: 12px;
+  padding: 25px 0;
+}
+
+.docs-footer-list {
+  margin: 0 auto;
+  max-width: 1200px;
+}
