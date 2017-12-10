@@ -8,11 +8,12 @@ import {
 
 import { HomeSectionComponent } from './home/home.component';
 import {ProductSectionComponent} from './product/product.component';
+import { ContactsComponent } from './contacts/contacts.component';
 
 @NgModule({
   imports: [CommonModule, BrowserAnimationsModule, MatCardModule, MatTabsModule, MatListModule, MatIconModule, MatButtonModule],
-  declarations: [HomeSectionComponent, ProductSectionComponent],
-  exports: [HomeSectionComponent, ProductSectionComponent]
+  declarations: [HomeSectionComponent, ProductSectionComponent, ContactsComponent],
+  exports: [HomeSectionComponent, ProductSectionComponent, ContactsComponent]
 })
 
 export class SectionsModule {

@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+declare let $: any;
 
 @Component({
   moduleId: module.id,
@@ -7,7 +8,7 @@ import {Component, OnInit} from '@angular/core';
   styleUrls: ['home.component.css']
 })
 
-export class HomeSectionComponent implements OnInit{
+export class HomeSectionComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
@@ -15,7 +16,8 @@ export class HomeSectionComponent implements OnInit{
     window.scroll(0, 0);
 
     $('.carousel').carousel({
-      interval: 5000
+      interval: 5000,
+      pause: false
     });
   }
 }
