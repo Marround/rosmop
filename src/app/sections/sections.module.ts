@@ -17,6 +17,8 @@ import { AuthComponent } from './auth/auth.component';
 import { AdminkaComponent } from './adminka/adminka.component';
 import {StaticPagesModule, aspRouts} from './adminka/staticpages/index';
 import {RouterModule} from '@angular/router';
+import {AuthService} from '../service/auth.service';
+import {AuthGuard} from '../service/adm-guard.service';
 
 @NgModule({
   imports: [
@@ -30,6 +32,7 @@ import {RouterModule} from '@angular/router';
     MatIconModule,
     MatButtonModule
   ],
+  providers: [AuthService, AuthGuard],
   declarations: [HomeSectionComponent, ProductSectionComponent, ContactsComponent, FooterComponent, NewsComponent, BlogComponent, ReadysolutionsComponent, AuthComponent, AdminkaComponent],
   exports: [HomeSectionComponent, ProductSectionComponent, ContactsComponent, NewsComponent, BlogComponent, ReadysolutionsComponent, AuthComponent]
 })

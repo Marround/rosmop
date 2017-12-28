@@ -1,5 +1,5 @@
 <nav id="main-menu">
-  <a docs-button mat-button routerLink="/home" routerLinkActive="active">
+  <a docs-button mat-button routerLink="/" routerLinkActive="active">
     РосМоп
   </a>
   <a docs-button mat-button routerLink="/news" routerLinkActive="active">
@@ -21,8 +21,23 @@
 
   <div class="flex-spacer"></div>
 
-  <a docs-button mat-button routerLink="/home" routerLinkActive="active">
-    <mat-icon>airplay</mat-icon>
-    SI
+  <a docs-button mat-button [matMenuTriggerFor]="menu">
+    <mat-icon>account_circle</mat-icon>
   </a>
+  <mat-menu #menu="matMenu">
+    <button mat-menu-item *ngIf="!(isLoggedIn | async)" (click)="goToRout('auth')">
+      <span>Авторизоваться</span>
+    </button>
+    <button mat-menu-item *ngIf="isLoggedIn | async" (click)="goToRout('adminka/productedit')">
+      <span>Редактировать товары</span>
+    </button>
+    <button mat-menu-item *ngIf="isLoggedIn | async" (click)="goToRout('adminka/newsedit')">
+      <span>Редактировать новости</span>
+    </button>
+    <button mat-menu-item *ngIf="isLoggedIn | async" (click)="goToRout('adminka/blogedit')">
+      <span>Редактировать блог</span>
+    </button>
+  </mat-menu>
+
+
 </nav>

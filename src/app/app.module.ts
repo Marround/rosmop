@@ -7,7 +7,7 @@ import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {SectionsModule, routs} from './sections/index';
 import {RouterModule} from '@angular/router';
 import { MenuComponent } from './menu/menu.component';
-import {MatButtonModule, MatIconModule} from '@angular/material';
+import {MatButtonModule, MatIconModule, MatMenuModule} from '@angular/material';
 
 
 
@@ -22,7 +22,8 @@ import {MatButtonModule, MatIconModule} from '@angular/material';
     BrowserAnimationsModule,
     SectionsModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
