@@ -1,4 +1,4 @@
-import { Component} from '@angular/core';
+import { Component } from '@angular/core';
 
 @Component({
   moduleId: module.id,
@@ -6,6 +6,6 @@ import { Component} from '@angular/core';
   templateUrl: './product.component.html',
   styleUrls: ['./product.component.css']
 })
-export class ProductSectionComponent {
+export class ProductComponent {
 
 }

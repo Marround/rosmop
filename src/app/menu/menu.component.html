@@ -25,17 +25,20 @@
     <mat-icon>account_circle</mat-icon>
   </a>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item *ngIf="!(isLoggedIn | async)" (click)="goToRout('auth')">
+    <button mat-menu-item *ngIf="!(auth.user | async)" (click)="goToRout('auth')">
       <span>Авторизоваться</span>
     </button>
-    <button mat-menu-item *ngIf="isLoggedIn | async" (click)="goToRout('adminka/productedit')">
+    <button mat-menu-item *ngIf="auth.user | async" (click)="goToRout('adminka/productedit')">
       <span>Редактировать товары</span>
     </button>
-    <button mat-menu-item *ngIf="isLoggedIn | async" (click)="goToRout('adminka/newsedit')">
+    <button mat-menu-item *ngIf="auth.user | async" (click)="goToRout('adminka/newsedit')">
       <span>Редактировать новости</span>
     </button>
-    <button mat-menu-item *ngIf="isLoggedIn | async" (click)="goToRout('adminka/blogedit')">
+    <button mat-menu-item *ngIf="auth.user | async" (click)="goToRout('adminka/blogedit')">
       <span>Редактировать блог</span>
+    </button>
+    <button mat-menu-item *ngIf="auth.user | async" (click)="logOut()">
+      <span>Выход</span>
     </button>
   </mat-menu>
 

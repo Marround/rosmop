@@ -1,5 +1,5 @@
 import {HomeSectionComponent} from './home/home.component';
-import {ProductSectionComponent} from './product/product.component';
+import {ProductComponent} from './product/product.component';
 import {ContactsComponent} from './contacts/contacts.component';
 import {NewsComponent} from './news/news.component';
 import {ReadysolutionsComponent} from './readysolutions/readysolutions.component';
@@ -12,7 +12,7 @@ import {AuthGuard} from '../service/adm-guard.service';
 export const routs = [
   {path: '', component: HomeSectionComponent},
   {path: 'news', component: NewsComponent},
-  {path: 'product', component: ProductSectionComponent},
+  {path: 'product', component: ProductComponent},
   {path: 'readysolutions', component: ReadysolutionsComponent},
   {path: 'blog', component: BlogComponent},
   {path: 'contacts', component: ContactsComponent},

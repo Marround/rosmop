@@ -12,13 +12,15 @@ export class MenuComponent implements OnInit {
 
   constructor(private auth: AuthService, private router: Router) { }
 
-  isLoggedIn = this.auth.isAuth();
-
   ngOnInit() {
   }
 
-  goToRout(rout) {
-    this.router.navigate([rout]);
+  goToRout(r) {
+    this.router.navigate([r]);
+  }
+
+  logOut() {
+    this.auth.signOut();
   }
 
   @HostListener('window:scroll', [])

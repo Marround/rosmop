@@ -1,5 +1,5 @@
 import {Component, OnInit} from '@angular/core';
-declare let $: any;
+// declare let $: any;
 
 @Component({
   moduleId: module.id,
@@ -15,9 +15,9 @@ export class HomeSectionComponent implements OnInit {
     window.scroll(0, 15);
     window.scroll(0, 0);
 
-    $('.carousel').carousel({
-      interval: 5000,
-      pause: false
-    });
+    // $('.carousel').carousel({
+    //   interval: 5000,
+    //   pause: false
+    // });
   }
 }

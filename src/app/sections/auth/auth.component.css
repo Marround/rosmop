@@ -1,0 +1,19 @@
+.feedback-form {
+  display: flex;
+  flex-direction: column;
+}
+
+
+.auth-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.auth-form > * {
+  width: 100%;
+}
+
+.cmvh {
+  height: 100vh;
+  min-height: 250px;
+}
