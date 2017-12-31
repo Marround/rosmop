@@ -1,8 +1,9 @@
 <div class="cantainer-fluid d-flex align-items-center pt-5" *ngIf="newsArr?.length > 0">
- <div class="col-9">
+ <div class="col">
    <h3 class="text-center">Новости</h3>
+   <app-addnews></app-addnews>
    <ul *ngFor="let news of newsArr">
-     <li><strong>{{news.title}}</strong> {{news.date}} {{news.textnews}}</li>
+     <li (dblclick)="deleteNews($event, news)"><strong>{{news.title}}</strong> {{news.date}} {{news.textnews}}</li>
    </ul>
  </div>
 </div>

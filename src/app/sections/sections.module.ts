@@ -3,7 +3,7 @@ import { CommonModule} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
   MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatInputModule, MatListModule, MatSelectModule,
-  MatTabsModule, MatProgressSpinnerModule
+  MatTabsModule
 } from '@angular/material';
 
 import { HomeSectionComponent } from './home/home.component';
@@ -36,7 +36,6 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
-    MatProgressSpinnerModule,
     FormsModule,
     ReactiveFormsModule
   ],

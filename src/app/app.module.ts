@@ -6,7 +6,7 @@ import {SectionsModule, routs} from './sections/index';
 import {RouterModule} from '@angular/router';
 import {ServiceModule} from './service/service.module';
 import { MenuComponent } from './menu/menu.component';
-import {MatButtonModule, MatIconModule, MatMenuModule} from '@angular/material';
+import {MatButtonModule, MatDatepickerModule, MatIconModule, MatMenuModule} from '@angular/material';
 import {environment} from '../environments/environment';
 import {AngularFireModule} from 'angularfire2';
 // import { AngularFireAuthModule } from 'angularfire2/auth';
@@ -27,7 +27,8 @@ export const firebaseConfig = environment.firebase;
     SectionsModule,
     MatButtonModule,
     MatIconModule,
-    MatMenuModule
+    MatMenuModule,
+    MatDatepickerModule
   ],
   providers: [],
   bootstrap: [AppComponent]

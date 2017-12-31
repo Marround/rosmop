@@ -14,6 +14,10 @@ export class NewseditComponent implements OnInit, OnDestroy {
   newsSub: Subscription;
   constructor(private newsService: NewsService) { }
 
+  deleteNews(even, news) {
+    this.newsService.deleteNews(news);
+  }
+
   ngOnInit() {
     this.newsSub = this.newsService.getNews().subscribe(newsArr => {
       this.newsArr = newsArr;

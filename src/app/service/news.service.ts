@@ -7,10 +7,11 @@ import { News } from '../modules/news';
 export class NewsService {
   newsCollection: AngularFirestoreCollection<News>;
   newsArr: Observable<News[]>;
+  newsDoc: AngularFirestoreDocument<News>;
 
   constructor(private readonly afs: AngularFirestore) {
     // this.newsArr = this.afs.collection('news').valueChanges();
-    this.newsCollection = this.afs.collection('news', ref => ref.orderBy('date', 'desc'));
+    this.newsCollection = this.afs.collection('news'); //ref => ref.orderBy('date', 'desc')
 
     this.newsArr = this.newsCollection.snapshotChanges().map(changes => {
       return changes.map(a => {
@@ -24,7 +25,11 @@ export class NewsService {
   getNews() {
     return this.newsArr;
   }
-  addItem(news: News) {
+  addNews(news: News) {
     this.newsCollection.add(news);
+  }
+  deleteNews(news: News) {
+    this.newsDoc = this.afs.doc(`news/${news.id}`);
+    this.newsDoc.delete();
   }
 }
