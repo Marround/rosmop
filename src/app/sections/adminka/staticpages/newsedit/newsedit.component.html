@@ -1,9 +1,75 @@
-<div class="cantainer-fluid d-flex align-items-center pt-5" *ngIf="newsArr?.length > 0">
+<div class="cantainer-fluid d-flex align-items-center pt-5">
  <div class="col">
    <h3 class="text-center">Новости</h3>
-   <app-addnews></app-addnews>
-   <ul *ngFor="let news of newsArr">
-     <li (dblclick)="deleteNews($event, news)"><strong>{{news.title}}</strong> {{news.date}} {{news.textnews}}</li>
-   </ul>
+   <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#addnewsform" aria-expanded="false" aria-controls="collapseExample">
+     Создать новость
+   </button>
+   <div class="collapse" id="addnewsform">
+     <app-addnews></app-addnews>
+   </div>
+   <div *ngIf="newsArr?.length > 0">
+     <ul *ngFor="let news of newsArr" class="list-group mt-3">
+       <li class="list-group-item">
+         <div id="news-id-{{news.id}}">
+           <div class="row">
+             <div class="col-10">
+               <h2>{{news.title}} <span class="badge badge-secondary">{{news.date}}</span></h2>
+             </div>
+             <div class="col-2 d-flex justify-content-end">
+               <mat-icon (click)="editNews($event, news)" class="pointer">edit</mat-icon>
+               <mat-icon (click)="deleteNews($event, news)" class="pointer">delete</mat-icon>
+             </div>
+           </div>
+           <div class="col-12" [innerHTML]="news.textnews">
+           </div>
+         </div>
+         <div *ngIf="editState && newsToEdit.id == news.id" class="row">
+           <div class="col-10">
+             <h2>{{news.title}} <span class="badge badge-secondary">{{news.date}}</span></h2>
+           </div>
+           <div class="col-2 d-flex justify-content-end">
+             <mat-icon (click)="clearState(news)" class="pointer">open_in_new</mat-icon>
+             <mat-icon (click)="deleteNews($event, news)" class="pointer">delete</mat-icon>
+           </div>
+           <div class="col-12">
+             <form (ngSubmit)="updateNews(news)" class="addnews-form">
+
+               <!--date-->
+               <mat-form-field>
+                 <input matInput [matDatepicker]="dp" [(ngModel)]="date" name="date" placeholder="Дата">
+                 <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+                 <mat-datepicker #dp></mat-datepicker>
+               </mat-form-field>
+               <!--end date-->
+
+               <!--title-->
+               <mat-form-field>
+                 <input matInput type="text" [(ngModel)]="newsToEdit.title" name="title" placeholder="Заголовок">
+               </mat-form-field>
+               <!--end title-->
+
+               <!--linkstr-->
+               <mat-form-field>
+                 <input matInput type="text" [(ngModel)]="newsToEdit.linkstr" name="linkstr" placeholder="Адресная строка">
+               </mat-form-field>
+               <!--end linkstr-->
+
+               <!--textnews-->
+               <mat-form-field>
+                 <textarea matInput [(ngModel)]="newsToEdit.textnews" name="textnews" placeholder="Текст новости" rows="10"></textarea>
+               </mat-form-field>
+               <!--end textnews-->
+
+               <!--button-->
+               <div class="row justify-content-end pr-3">
+                 <button mat-button>Обновить</button>
+               </div>
+               <!--end button-->
+             </form>
+           </div>
+         </div>
+       </li>
+     </ul>
+   </div>
  </div>
 </div>

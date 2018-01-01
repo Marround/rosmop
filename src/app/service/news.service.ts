@@ -28,6 +28,10 @@ export class NewsService {
   addNews(news: News) {
     this.newsCollection.add(news);
   }
+  updateItem(news: News) {
+    this.newsDoc = this.afs.doc(`news/${news.id}`);
+    this.newsDoc.update(news);
+  }
   deleteNews(news: News) {
     this.newsDoc = this.afs.doc(`news/${news.id}`);
     this.newsDoc.delete();

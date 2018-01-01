@@ -3,7 +3,6 @@ import {MAT_MOMENT_DATE_FORMATS, MomentDateAdapter} from '@angular/material-mome
 import {DateAdapter, MAT_DATE_FORMATS, MAT_DATE_LOCALE} from '@angular/material/core';
 import {NewsService} from '../../../../../service/news.service';
 import { News } from '../../../../../modules/news';
-import {FormGroup} from '@angular/forms';
 import * as moment from 'moment';
 
 @Component({
@@ -22,6 +21,7 @@ export class AddnewsComponent implements OnInit {
   private newsOne: News = {
     date: '',
     title: '',
+    linkstr: '',
     textnews: '',
     photo: [
       {
@@ -30,7 +30,6 @@ export class AddnewsComponent implements OnInit {
       }
     ]
   };
-  newsOneForm: FormGroup;
 
   constructor(private newsService: NewsService) { }
 
@@ -42,6 +41,7 @@ export class AddnewsComponent implements OnInit {
       this.newsService.addNews(this.newsOne);
 
       this.newsOne.title = '';
+      this.newsOne.linkstr = '';
       this.newsOne.textnews = '';
       this.newsOne.date = '';
       this.date =  moment();
