@@ -10,6 +10,7 @@ import { ProducteditComponent } from './productedit/productedit.component';
 import { NewseditComponent } from './newsedit/newsedit.component';
 import { BlogeditComponent } from './blogedit/blogedit.component';
 import { AddnewsComponent } from './newsedit/addnews/addnews.component';
+import {FroalaEditorModule, FroalaViewModule} from 'angular2-froala-wysiwyg';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { AddnewsComponent } from './newsedit/addnews/addnews.component';
     MatSelectModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    FormsModule
+    FormsModule,
+    FroalaEditorModule.forRoot(), FroalaViewModule.forRoot()
   ],
   declarations: [ProducteditComponent, NewseditComponent, BlogeditComponent, AddnewsComponent],
   exports: [ProducteditComponent, NewseditComponent, BlogeditComponent, AddnewsComponent]

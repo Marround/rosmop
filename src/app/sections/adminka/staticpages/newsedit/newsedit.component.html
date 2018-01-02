@@ -55,13 +55,11 @@
                <!--end linkstr-->
 
                <!--textnews-->
-               <mat-form-field>
-                 <textarea matInput [(ngModel)]="newsToEdit.textnews" name="textnews" placeholder="Текст новости" rows="10"></textarea>
-               </mat-form-field>
+               <textarea [(ngModel)]="newsToEdit.textnews" name="textnews" [froalaEditor]='options' rows="15"></textarea>
                <!--end textnews-->
 
                <!--button-->
-               <div class="row justify-content-end pr-3">
+               <div class="row justify-content-end pr-3 mt-3">
                  <button mat-button>Обновить</button>
                </div>
                <!--end button-->

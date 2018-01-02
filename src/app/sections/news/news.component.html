@@ -1,9 +1,21 @@
-<div class="cantainer-fluid d-flex align-items-center pt-5" *ngIf="newsArr?.length > 0">
-  <div class="col-9">
-    <h3 class="text-center">Новости</h3>
-    <ul *ngFor="let news of newsArr">
-      <li><strong>{{news.title}}</strong> {{news.date}} {{news.textnews}}</li>
-    </ul>
+<div class="cantainer-fluid d-flex align-items-center pt-5 ">
+  <div class="col-12">
+    <h2 class="text-center">Новости</h2>
+    <div *ngIf="newsArr?.length > 0">
+      <ul *ngFor="let news of newsArr" class="list-group mt-3">
+        <li class="list-group-item">
+          <div id="news-id-{{news.id}}">
+            <div class="row">
+              <div class="col-12">
+                <h2>{{news.title}} <span class="badge badge-secondary">{{news.date}}</span></h2>
+              </div>
+            </div>
+            <div class="col-12" [innerHTML]="news.textnews">
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 <app-footer></app-footer>

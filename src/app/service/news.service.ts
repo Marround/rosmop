@@ -11,7 +11,7 @@ export class NewsService {
 
   constructor(private readonly afs: AngularFirestore) {
     // this.newsArr = this.afs.collection('news').valueChanges();
-    this.newsCollection = this.afs.collection('news'); //ref => ref.orderBy('date', 'desc')
+    this.newsCollection = this.afs.collection('news', ref => ref.orderBy('linkstr', 'desc')); //ref => ref.orderBy('date', 'desc')
 
     this.newsArr = this.newsCollection.snapshotChanges().map(changes => {
       return changes.map(a => {
