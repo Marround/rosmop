@@ -1,7 +1,7 @@
-export interface News {
+export interface Blog {
   id?: string;
   date?: string;
   title?: string;
   linkstr?: string;
-  textnews?: string;
+  textblog?: string;
 }

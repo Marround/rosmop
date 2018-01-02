@@ -1,3 +1,73 @@
-<p>
-  blogedit works!
-</p>
+<div class="cantainer-fluid d-flex align-items-center pt-5">
+  <div class="col">
+    <h3 class="text-center">Блог</h3>
+    <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#addblogform" aria-expanded="false" aria-controls="collapseExample">
+      Создать блог
+    </button>
+    <div class="collapse" id="addblogform">
+      <app-addblog></app-addblog>
+    </div>
+    <div *ngIf="blogArr?.length > 0">
+      <ul *ngFor="let blog of blogArr" class="list-group mt-3">
+        <li class="list-group-item">
+          <div id="blog-id-{{blog.id}}">
+            <div class="row">
+              <div class="col-10">
+                <h2>{{blog.title}} <span class="badge badge-secondary">{{blog.date}}</span></h2>
+              </div>
+              <div class="col-2 d-flex justify-content-end">
+                <mat-icon (click)="editBlog($event, blog)" class="pointer">edit</mat-icon>
+                <mat-icon (click)="deleteBlog($event, blog)" class="pointer">delete</mat-icon>
+              </div>
+            </div>
+            <div class="col-12" [innerHTML]="blog.textblog">
+            </div>
+          </div>
+          <div *ngIf="editState && blogToEdit.id == blog.id" class="row">
+            <div class="col-10">
+              <h2>{{blog.title}} <span class="badge badge-secondary">{{blog.date}}</span></h2>
+            </div>
+            <div class="col-2 d-flex justify-content-end">
+              <mat-icon (click)="clearState(blog)" class="pointer">open_in_new</mat-icon>
+              <mat-icon (click)="deleteBlog($event, blog)" class="pointer">delete</mat-icon>
+            </div>
+            <div class="col-12">
+              <form (ngSubmit)="updateBlog(blog)" class="addblog-form">
+
+                <!--date-->
+                <mat-form-field>
+                  <input matInput [matDatepicker]="dp" [(ngModel)]="date" name="date" placeholder="Дата">
+                  <mat-datepicker-toggle matSuffix [for]="dp"></mat-datepicker-toggle>
+                  <mat-datepicker #dp></mat-datepicker>
+                </mat-form-field>
+                <!--end date-->
+
+                <!--title-->
+                <mat-form-field>
+                  <input matInput type="text" [(ngModel)]="blogToEdit.title" name="title" placeholder="Заголовок">
+                </mat-form-field>
+                <!--end title-->
+
+                <!--linkstr-->
+                <mat-form-field>
+                  <input matInput type="text" [(ngModel)]="blogToEdit.linkstr" name="linkstr" placeholder="Адресная строка">
+                </mat-form-field>
+                <!--end linkstr-->
+
+                <!--textblog-->
+                <textarea [(ngModel)]="blogToEdit.textblog" name="textblog" [froalaEditor]='options' rows="15"></textarea>
+                <!--end textblog-->
+
+                <!--button-->
+                <div class="row justify-content-end pr-3 mt-3">
+                  <button mat-button>Обновить</button>
+                </div>
+                <!--end button-->
+              </form>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>

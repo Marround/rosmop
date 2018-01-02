@@ -1,4 +1,21 @@
-<p>
-  blog works!
-</p>
+<div class="cantainer-fluid d-flex align-items-center pt-5 ">
+  <div class="col-12">
+    <h2 class="text-center">Блог</h2>
+    <div *ngIf="blogArr?.length > 0">
+      <ul *ngFor="let blog of blogArr" class="list-group mt-3">
+        <li class="list-group-item">
+          <div id="blog-id-{{blog.id}}">
+            <div class="row">
+              <div class="col-12">
+                <h2>{{blog.title}} <span class="badge badge-secondary">{{blog.date}}</span></h2>
+              </div>
+            </div>
+            <div class="col-12" [innerHTML]="blog.textblog">
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
 <app-footer></app-footer>

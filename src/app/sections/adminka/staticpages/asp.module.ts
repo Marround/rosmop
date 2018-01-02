@@ -11,6 +11,7 @@ import { NewseditComponent } from './newsedit/newsedit.component';
 import { BlogeditComponent } from './blogedit/blogedit.component';
 import { AddnewsComponent } from './newsedit/addnews/addnews.component';
 import {FroalaEditorModule, FroalaViewModule} from 'angular2-froala-wysiwyg';
+import { AddblogComponent } from './blogedit/addblog/addblog.component';
 
 
 @NgModule({
@@ -30,8 +31,8 @@ import {FroalaEditorModule, FroalaViewModule} from 'angular2-froala-wysiwyg';
     FormsModule,
     FroalaEditorModule.forRoot(), FroalaViewModule.forRoot()
   ],
-  declarations: [ProducteditComponent, NewseditComponent, BlogeditComponent, AddnewsComponent],
-  exports: [ProducteditComponent, NewseditComponent, BlogeditComponent, AddnewsComponent]
+  declarations: [ProducteditComponent, NewseditComponent, BlogeditComponent, AddnewsComponent, AddblogComponent],
+  exports: [ProducteditComponent, NewseditComponent, BlogeditComponent, AddnewsComponent, AddblogComponent]
 })
 
 export class StaticPagesModule {

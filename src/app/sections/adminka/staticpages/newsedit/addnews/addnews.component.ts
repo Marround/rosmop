@@ -27,12 +27,6 @@ export class AddnewsComponent implements OnInit {
     title: '',
     linkstr: '',
     textnews: '',
-    photo: [
-      {
-        name: '',
-        link: ''
-      }
-    ]
   };
 
   constructor(private newsService: NewsService) { }
