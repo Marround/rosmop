@@ -18,6 +18,9 @@
   <a docs-button mat-button routerLink="/contacts" routerLinkActive="active">
     Контакты
   </a>
+  <a docs-button mat-button routerLink="/auth" routerLinkActive="active">
+    Авторизоваться
+  </a>
 
   <div class="flex-spacer"></div>
 
@@ -36,6 +39,9 @@
     </button>
     <button mat-menu-item *ngIf="auth.user | async" (click)="goToRout('adminka/blogedit')">
       <span>Редактировать блог</span>
+    </button>
+    <button mat-menu-item *ngIf="auth.user | async" (click)="goToRout('adminka/filemanager')">
+      <span>Файловый менеджер</span>
     </button>
     <button mat-menu-item *ngIf="auth.user | async" (click)="logOut()">
       <span>Выход</span>

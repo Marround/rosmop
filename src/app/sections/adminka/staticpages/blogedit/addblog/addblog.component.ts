@@ -17,7 +17,7 @@ import {Blog} from '../../../../../modules/blog';
   ]
 })
 export class AddblogComponent implements OnInit {
-  private blog: Blog = {
+  blog: Blog = {
     date: '',
     title: '',
     linkstr: '',

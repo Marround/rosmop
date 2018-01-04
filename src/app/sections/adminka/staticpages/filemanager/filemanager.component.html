@@ -1,0 +1,71 @@
+<div class="container pt-5">
+  <h3 class="text-center">Менеджер файлов</h3>
+  <!--<div class="card">-->
+    <!--<form (submit)="handleFileInput(fileArray)">-->
+      <!--<input type="file" id="file" name="file" class="form-control" ngModel (change)="displayFiles($event.target.files)" multiple>-->
+      <!--<ul class="list-group"  *ngFor="let fileOne of fileArray">-->
+        <!--<li class="list-group-item">-->
+          <!--<strong>NAME:{{fileOne.name}}</strong>-->
+        <!--</li>-->
+      <!--</ul>-->
+      <!--<button mat-button *ngIf="fileArray && fileArray.length > 0">-->
+        <!--<mat-icon>file_upload</mat-icon>-->
+        <!--Загрузить файлы-->
+      <!--</button>-->
+    <!--</form>-->
+  <!--</div>-->
+
+  <div class="card mt-3 p-3">
+    <div class="alert alert-danger {{error}}" (click)="closeError()" role="alert">
+      <strong>Не удалось загрузить данные с сервера! Попробуйт позже!</strong>
+    </div>
+    <div class="row">
+      <div class="col-3">
+        <mat-form-field>
+          <mat-select placeholder="Путь к фотографиям" [(value)]="selected" (change)="updateFileData()">
+            <mat-option *ngFor="let dir of path" [value]="dir.value">
+              {{ dir.viewValue }}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+      </div>
+
+      <div class="col-3">
+        <button mat-icon-button (click)="updateFileData()">
+          <mat-icon aria-label="Example icon-button with a heart icon">refresh</mat-icon>
+        </button>
+      </div>
+    </div>
+
+    <div class="example-header">
+      <mat-form-field>
+        <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Фильтр" name="filter">
+      </mat-form-field>
+    </div>
+
+    <div class="example-container mat-elevation-z8">
+
+      <mat-table [dataSource]="fileData" matSort>
+
+        <!-- Name Column -->
+        <ng-container matColumnDef="filename">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Имя файла </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.filename}} </mat-cell>
+        </ng-container>
+
+        <!-- Color Column -->
+        <ng-container matColumnDef="fullPath">
+          <mat-header-cell *matHeaderCellDef mat-sort-header> Полный путь </mat-header-cell>
+          <mat-cell *matCellDef="let row"> {{row.fullPath}} </mat-cell>
+        </ng-container>
+
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns;">
+        </mat-row>
+      </mat-table>
+
+      <mat-paginator [pageSizeOptions]="[10, 25, 50]"></mat-paginator>
+    </div>
+  </div>
+
+</div>

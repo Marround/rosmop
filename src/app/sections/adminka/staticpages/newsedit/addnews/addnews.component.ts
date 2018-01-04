@@ -22,7 +22,7 @@ export class AddnewsComponent implements OnInit {
     language: 'ru'
   };
   date = moment();
-  private newsOne: News = {
+  newsOne: News = {
     date: '',
     title: '',
     linkstr: '',
