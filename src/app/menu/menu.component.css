@@ -1,17 +1,16 @@
 nav {
+  height: 56px;
   position: fixed;
   z-index: 10;
   padding: 8px 16px;
   flex-wrap: wrap;
   display: flex;
   width: 100%;
-  font-weight: bold;
   background-color: rgba(255,255,255, .2);
 }
 
 .nav-colored {
-  background-color: #3097D1 !important;
-  color: hsla(0,0%,100%,.87);
+  background-color: hsla(0,0%,100%,.87);
   animation: emergence 0.4s ease-in-out;
 }
 
@@ -20,32 +19,31 @@ nav {
     background-color: transparent;
   }
   to{
-    background-color: #3097D1 !important;
-  }
-}
-
-@keyframes disappearance {
-  from {
-    background-color: #3097D1 !important;
-  }
-  to{
-    background-color: transparent;
+    background-color: hsla(0,0%,100%,.87);
   }
 }
 
 nav a {
-  color: mintcream;
+  color: #0089ff;
   text-decoration: none;
-  text-shadow: 1px 1px 2px #111, 0 0 1em #222;
+  padding: 0 5px;
+  cursor: pointer;
 }
 
-nav a:hover {
-  color: white;
+a:hover, .active {
+  color: orangered !important;
+  /*background-color: rgba(100,100,100, 0.1);*/
   text-decoration: none;
+  border-radius: 3px;
 }
 
-nav a.active {
-  color: white;
+.sm-bottom-menu {
+  position: fixed;
+  height: 56px;
+  background-color: rgba(255,255,255, 0.82);
+  bottom: 0;
+  z-index: 999;
+  display: none;
 }
 
 .flex-spacer {
@@ -54,3 +52,35 @@ nav a.active {
   -ms-flex-positive: 1;
   flex-grow: 1;
 }
+@media (max-width: 650px) {
+  .main-menu {
+    display: none;
+  }
+  .sm-bottom-menu {
+    display: block;
+  }
+}
+@media (min-width: 900px) {
+  .social-link-lg {
+    display: block;
+  }
+  .social-image-lg {
+    display: block;
+  }
+  .social-links-button {
+    display: none !important;
+  }
+}
+@media (max-width: 899px) {
+  .social-link-lg {
+    display: none;
+  }
+  .social-image-lg {
+    display: none;
+  }
+  .social-link {
+    display: block;
+    padding: 5px 10px;
+  }
+}
+

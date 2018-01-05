@@ -10,7 +10,7 @@ import {aspRouts} from './adminka/staticpages/index';
 import {AuthGuard} from '../service/adm-guard.service';
 
 export const routs = [
-  {path: '', component: HomeSectionComponent},
+  {path: 'home', component: HomeSectionComponent},
   {path: 'news', component: NewsComponent},
   {path: 'product', component: ProductComponent},
   {path: 'readysolutions', component: ReadysolutionsComponent},
@@ -19,5 +19,5 @@ export const routs = [
   {path: 'auth', component: AuthComponent},
   {path: 'adminka', redirectTo: '/adminka/productedit', pathMatch: 'full'},
   {path: 'adminka', component: AdminkaComponent, canActivate: [AuthGuard], children: aspRouts},
-  {path: '', redirectTo: '/', pathMatch: 'full'}
+  {path: '', redirectTo: 'home', pathMatch: 'full'}
 ]
