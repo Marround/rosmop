@@ -8,12 +8,13 @@ import { NotifyService } from './notify.service';
 import {NewsService} from './news.service';
 import {BlogService} from './blog.service';
 import {UploadfileService} from './uploadfile.service';
+import {ProductService} from './product.service';
 
 @NgModule({
   imports: [
     AngularFireAuthModule,
     AngularFirestoreModule,
   ],
-  providers: [AuthService, NotifyService, NewsService, BlogService, UploadfileService],
+  providers: [AuthService, NotifyService, ProductService, NewsService, BlogService, UploadfileService],
 })
 export class ServiceModule { }

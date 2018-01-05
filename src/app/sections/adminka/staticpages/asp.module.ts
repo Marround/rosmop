@@ -14,6 +14,7 @@ import { AddnewsComponent } from './newsedit/addnews/addnews.component';
 import {FroalaEditorModule, FroalaViewModule} from 'angular2-froala-wysiwyg';
 import { AddblogComponent } from './blogedit/addblog/addblog.component';
 import { FilemanagerComponent } from './filemanager/filemanager.component';
+import { AddproductComponent } from './productedit/addproduct/addproduct.component';
 
 
 @NgModule({
@@ -36,8 +37,8 @@ import { FilemanagerComponent } from './filemanager/filemanager.component';
     FormsModule,
     FroalaEditorModule.forRoot(), FroalaViewModule.forRoot()
   ],
-  declarations: [ProducteditComponent, NewseditComponent, BlogeditComponent, AddnewsComponent, AddblogComponent, FilemanagerComponent],
-  exports: [ProducteditComponent, NewseditComponent, BlogeditComponent, AddnewsComponent, AddblogComponent, FilemanagerComponent]
+  declarations: [ProducteditComponent, NewseditComponent, BlogeditComponent, AddnewsComponent, AddblogComponent, FilemanagerComponent, AddproductComponent],
+  exports: [ProducteditComponent, NewseditComponent, BlogeditComponent, AddnewsComponent, AddblogComponent, FilemanagerComponent, AddproductComponent]
 })
 
 export class StaticPagesModule {
