@@ -55,7 +55,7 @@
                <!--end linkstr-->
 
                <!--textnews-->
-               <textarea [(ngModel)]="newsToEdit.textnews" name="textnews" [froalaEditor]='options' rows="15"></textarea>
+               <ckeditor [(ngModel)]="newsToEdit.textnews" name="textnews" debounce="500"></ckeditor>
                <!--end textnews-->
 
                <!--button-->

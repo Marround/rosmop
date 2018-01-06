@@ -11,10 +11,10 @@ import { ProducteditComponent } from './productedit/productedit.component';
 import { NewseditComponent } from './newsedit/newsedit.component';
 import { BlogeditComponent } from './blogedit/blogedit.component';
 import { AddnewsComponent } from './newsedit/addnews/addnews.component';
-import {FroalaEditorModule, FroalaViewModule} from 'angular2-froala-wysiwyg';
 import { AddblogComponent } from './blogedit/addblog/addblog.component';
 import { FilemanagerComponent } from './filemanager/filemanager.component';
 import { AddproductComponent } from './productedit/addproduct/addproduct.component';
+import {CKEditorModule} from "ng2-ckeditor";
 
 
 @NgModule({
@@ -35,7 +35,7 @@ import { AddproductComponent } from './productedit/addproduct/addproduct.compone
     MatSortModule,
     MatTableModule,
     FormsModule,
-    FroalaEditorModule.forRoot(), FroalaViewModule.forRoot()
+    CKEditorModule
   ],
   declarations: [ProducteditComponent, NewseditComponent, BlogeditComponent, AddnewsComponent, AddblogComponent, FilemanagerComponent, AddproductComponent],
   exports: [ProducteditComponent, NewseditComponent, BlogeditComponent, AddnewsComponent, AddblogComponent, FilemanagerComponent, AddproductComponent]
