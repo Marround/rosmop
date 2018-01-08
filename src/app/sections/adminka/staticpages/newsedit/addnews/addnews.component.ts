@@ -17,10 +17,10 @@ import * as moment from 'moment';
   ]
 })
 export class AddnewsComponent implements OnInit {
-  public options: Object = {
-    placeholderText: 'Текст новости',
-    language: 'ru'
-  };
+  // public options: Object = {
+  //   placeholderText: 'Текст новости',
+  //   language: 'ru'
+  // };
   date = moment();
   newsOne: News = {
     date: '',

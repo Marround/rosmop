@@ -7,5 +7,90 @@
     <div class="collapse" id="addproductform">
       <app-addproduct></app-addproduct>
     </div>
+    <div class="collapse" id="editproductform">
+      <div class="container">
+        <mat-card class="mat-elevation-z4 position-relative">
+          <mat-icon class="close-button cursor-pointer" (click)="closeEPF()">close</mat-icon>
+          <mat-card-title>Изменить продукт</mat-card-title>
+          <mat-card-content *ngIf="goodsToUpdate">
+            <form (ngSubmit)="updateGoods()" class="updategoods-form">
+              <!--group-->
+              <mat-form-field>
+                <mat-select placeholder="Группа товара"  [(ngModel)]="goodsToUpdate.g_id" name="gid">
+                  <mat-option *ngFor="let group of groupArray" value="{{group.id}}" (click)="setRouterLink($event, group.routerlink)">{{group.groupname}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <!--end group-->
+
+              <!--title-->
+              <mat-form-field>
+                <input matInput type="text" [(ngModel)]="goodsToUpdate.title" name="title" placeholder="Название продукта">
+              </mat-form-field>
+              <!--title-->
+
+              <!--video-->
+              <mat-form-field>
+                <input matInput type="text" [(ngModel)]="goodsToUpdate.video" name="video" placeholder="Ссылка на видеоролик">
+              </mat-form-field>
+              <!--video-->
+
+              <!--photo-->
+              <mat-form-field>
+                <input matInput type="text" [(ngModel)]="goodsToUpdate.photo" name="зрщещ" placeholder="Список фото">
+              </mat-form-field>
+              <!--photo-->
+
+              <!--byappointment-->
+              <mat-form-field>
+                <mat-select placeholder="Вид уборки"  [(ngModel)]="goodsToUpdate.byappointment" name="byappointment">
+                  <mat-option *ngFor="let byappointment of byappointmentArray" value="{{byappointment.id}}">{{byappointment.display}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <!--byappointment-->
+
+              <!--material-->
+              <mat-form-field>
+                <mat-select placeholder="Материал"  [(ngModel)]="goodsToUpdate.material" name="material">
+                  <mat-option *ngFor="let material of materialArray" value="{{material.id}}">{{material.display}}</mat-option>
+                </mat-select>
+              </mat-form-field>
+              <!--material-->
+
+              <!--description-->
+              <ckeditor [(ngModel)]="goodsToUpdate.description" name="description" debounce="500"></ckeditor>
+              <!--description-->
+
+              <!--button-->
+              <div class="row justify-content-end pr-3 mt-3">
+                <button mat-button>Обновить данные</button>
+              </div>
+              <!--end button-->
+            </form>
+            <div class="row pr-3 mt-3">
+              <button mat-raised-button color="accent" (click)="deleteGoods()">Удалить</button>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+    <div class="row mt-4">
+      <div class="col-xl-2 col-lg-3 col-md-12 col-sm-12 col-12">
+        <ul class="list-group" *ngFor="let group of groupArray">
+          <li class="list-group-item cursor-pointer" (click)="showGroup($event, group.id)">
+            {{group.groupname}}
+          </li>
+        </ul>
+      </div>
+      <div class="col-lg-9 col-md-12 col-sm-12 col-12" *ngIf="selectedGroup">
+        <div class="row d-flex justify-content-around">
+          <div class="card m-3 col-xl-3 col-lg-3 col-md-5 col-sm-5 col-11" *ngFor="let goods of goodsToShow">
+            <img class="card-img-top" src="{{goods.photo}}" alt="Card image cap">
+            <div class="card-body cursor-pointer" (click)="toEdit($event, goods)">
+              <strong class="card-title">{{goods.title}}</strong>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>

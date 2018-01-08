@@ -1,0 +1,17 @@
+.cursor-pointer {
+  cursor: pointer;
+}
+.card-title {
+  font-size: calc(0.7rem + 0.4vw) !important;
+}
+.close-button {
+  position: absolute;
+  right: 15px;
+}
+.cursor-pointer {
+  cursor: pointer;
+}
+.updategoods-form {
+  display: flex;
+  flex-direction: column;
+}
