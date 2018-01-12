@@ -3,6 +3,7 @@ import {News} from '../../../modules/news';
 import {Subscription} from 'rxjs/Subscription';
 import {NewsService} from '../../../service/news.service';
 import {ActivatedRoute, Params, Router} from '@angular/router';
+import {Meta, Title} from "@angular/platform-browser";
 
 @Component({
   moduleId: module.id,
@@ -17,7 +18,7 @@ export class NewsviewComponent implements OnInit, OnDestroy {
   newsArr: News[];
   newsOne: News;
   newsSub: Subscription;
-  constructor(private newsService: NewsService, private route: ActivatedRoute, private router: Router) { }
+  constructor(private newsService: NewsService, private route: ActivatedRoute, private title: Title, private meta: Meta) { }
 
   ngOnInit() {
     this.routeSubscription = this.route.params.subscribe((params: Params) => {
@@ -30,6 +31,10 @@ export class NewsviewComponent implements OnInit, OnDestroy {
       })[0];
       if (!this.newsOne) {
         this.pageNotFound = false;
+      }else {
+        this.title.setTitle(this.newsOne.title);
+        this.meta.updateTag({name: 'keywords', content: this.newsOne.title});
+        this.meta.updateTag({name: 'description', content: 'Новость - ' + this.newsOne.title});
       }
     });
   }

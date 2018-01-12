@@ -4,7 +4,7 @@ import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Location} from '@angular/common';
 import {Subscription} from 'rxjs/Subscription';
 import {Goods, Group} from '../../../modules/product';
-import {DomSanitizer} from '@angular/platform-browser';
+import {DomSanitizer, Meta, Title} from '@angular/platform-browser';
 
 @Component({
   moduleId: module.id,
@@ -32,7 +32,10 @@ export class ProdviewComponent implements OnInit, OnDestroy {
               private route: ActivatedRoute,
               private router: Router,
               private _location: Location,
-              private _sanitizer: DomSanitizer) {
+              private _sanitizer: DomSanitizer,
+              private title: Title,
+              private meta: Meta
+              ) {
     // this.safeURL = this._sanitizer.bypassSecurityTrustResourceUrl(videoURL);
     // group data
     this.groupSub = this.productionService.getGroup().subscribe(groupArr => {
@@ -47,6 +50,18 @@ export class ProdviewComponent implements OnInit, OnDestroy {
         });
         if (!this.product.length) {
           this.pageNotFound = false;
+        }else {
+          this.title.setTitle(this.product[0].title + ' - продукция Росмоп');
+          this.meta.updateTag({name: 'keywords', content: this.product[0].title});
+          this.meta.updateTag({name: 'description', content: this.product[0].title + ' - продукция Росмоп'});
+
+          this.meta.updateTag({name: 'og:locate', content: 'ru_RU'});
+          this.meta.updateTag({name: 'og:type', content: 'article'});
+          this.meta.updateTag({name: 'og:title', content: this.product[0].title});
+          this.meta.updateTag({name: 'og:description', content: this.product[0].title});
+          this.meta.updateTag({name: 'og:image', content: this.product[0].photo.split('|')[0]});
+          this.meta.updateTag({name: 'og:url', content: 'http://rosmop.ru/product/' + this.product[0].filterlink + '/' + this.product[0].routerlink});
+          this.meta.updateTag({name: 'og:sitename', content: 'Росмоп'});
         }
       }
       this.photos = this.product[0].photo.split('|');
@@ -61,9 +76,18 @@ export class ProdviewComponent implements OnInit, OnDestroy {
     });
   }
   ngOnDestroy() {
+    // subscription
     this.groupSub.unsubscribe();
     this.goodsSub.unsubscribe();
     this.routeSubscription.unsubscribe();
+    // tags
+    this.meta.removeTag('name="og:locate"');
+    this.meta.removeTag('name="og:type"');
+    this.meta.removeTag('name="og:title"');
+    this.meta.removeTag('name="og:description"');
+    this.meta.removeTag('name="og:image"');
+    this.meta.removeTag('name="og:url"');
+    this.meta.removeTag('name="og:sitename"');
   }
   closeEPF() {
     this._location.back();

@@ -1,4 +1,5 @@
 import {Component, OnInit} from '@angular/core';
+import {Meta, Title} from '@angular/platform-browser';
 // declare let $: any;
 
 @Component({
@@ -9,7 +10,11 @@ import {Component, OnInit} from '@angular/core';
 })
 
 export class HomeSectionComponent implements OnInit {
-  constructor() { }
+  constructor(private title: Title, private meta: Meta) {
+    this.title.setTitle('Росмоп - Белгород');
+    this.meta.updateTag({name: 'keywords', content: 'Росмоп, моп, товары для клининга'});
+    this.meta.updateTag({name: 'description', content: 'Производство товаров для клининга'});
+  }
 
   ngOnInit() {
     window.scroll(0, 15);

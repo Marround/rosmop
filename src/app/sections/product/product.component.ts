@@ -3,6 +3,7 @@ import {ProductionService} from '../../service/production.service';
 import {Byappointment, Goods, Group, Material} from '../../modules/product';
 import {Subscription} from 'rxjs/Subscription';
 import {ActivatedRoute, Params, Router} from '@angular/router';
+import {Meta, Title} from "@angular/platform-browser";
 
 @Component({
   moduleId: module.id,
@@ -34,7 +35,9 @@ export class ProductComponent implements OnInit, OnDestroy {
   materialSub: Subscription;
   // end material
 
-  constructor(public productionService: ProductionService, private route: ActivatedRoute, private router: Router) {
+  constructor(public productionService: ProductionService, private route: ActivatedRoute, private title: Title, private meta: Meta) {
+    this.meta.updateTag({name: 'keywords', content: 'Росмоп, МОПы, ПАДы, боннеты, рукавицы, , клининговый инвентарь для ручной уборки, уборочные тележки, швабры'});
+    this.meta.updateTag({name: 'description', content: 'Продукция Росмоп'});
     // group data
     this.groupSub = this.productionService.getGroup().subscribe(groupArr => {
       this.groupArray = groupArr;
@@ -43,6 +46,7 @@ export class ProductComponent implements OnInit, OnDestroy {
       });
       if (this.groupFilter.length > 0) {
         this.pageTitle = this.groupFilter[0].groupname;
+        this.title.setTitle('Продукция - ' + this.pageTitle + ' - Росмоп - Белгород');
       }else {
         this.pageNotFound = false;
       }
@@ -76,6 +80,7 @@ export class ProductComponent implements OnInit, OnDestroy {
         this.pageTitle = this.groupArray.filter(value => {
           return value.routerlink === this.group;
         })[0].groupname;
+        this.title.setTitle('Продукция - ' + this.pageTitle + ' - Росмоп - Белгород');
       }
     });
   }

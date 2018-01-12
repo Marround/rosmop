@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../../service/auth.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
+import {Meta, Title} from "@angular/platform-browser";
 
 type UserFields = 'email' | 'password';
 type FormErrors = { [u in UserFields]: string };
@@ -31,7 +32,11 @@ export class AuthComponent implements OnInit {
     },
   };
 
-  constructor(private fb: FormBuilder, private auth: AuthService) { }
+  constructor(private fb: FormBuilder, private auth: AuthService, private title: Title, private meta: Meta) {
+    this.title.setTitle('Авторизация - Росмоп - Белгород');
+    this.meta.updateTag({name: 'keywords', content: 'Авторизация'});
+    this.meta.updateTag({name: 'description', content: 'Авторизация Росмоп'});
+  }
 
   ngOnInit() {
     this.buildForm();
