@@ -20,6 +20,10 @@ import {RouterModule} from '@angular/router';
 import {AuthService} from '../service/auth.service';
 import {AuthGuard} from '../service/adm-guard.service';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { ProdviewComponent } from './product/prodview/prodview.component';
+import { NewsviewComponent } from './news/newsview/newsview.component';
+import { BlogviewComponent } from './blog/blogview/blogview.component';
+import { NotfoundComponent } from './notfound/notfound.component';
 
 
 @NgModule({
@@ -40,8 +44,20 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
     ReactiveFormsModule
   ],
   providers: [AuthService, AuthGuard],
-  declarations: [HomeSectionComponent, ProductComponent, ContactsComponent, FooterComponent, NewsComponent, BlogComponent, ReadysolutionsComponent, AuthComponent, AdminkaComponent],
-  exports: [HomeSectionComponent, ProductComponent, ContactsComponent, FooterComponent, NewsComponent, BlogComponent, ReadysolutionsComponent, AuthComponent, AdminkaComponent]
+  declarations: [
+    HomeSectionComponent, ProductComponent, ContactsComponent,
+    FooterComponent, NewsComponent, BlogComponent,
+    ReadysolutionsComponent, AuthComponent, AdminkaComponent,
+    ProdviewComponent, NewsviewComponent, BlogviewComponent,
+    NotfoundComponent
+  ],
+  exports: [
+    HomeSectionComponent, ProductComponent, ContactsComponent,
+    FooterComponent, NewsComponent, BlogComponent,
+    ReadysolutionsComponent, AuthComponent, AdminkaComponent,
+    ProdviewComponent, NewsviewComponent, BlogviewComponent,
+    NotfoundComponent
+  ]
 })
 
 export class SectionsModule {

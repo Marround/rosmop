@@ -8,7 +8,7 @@
             <!--group-->
             <mat-form-field>
               <mat-select placeholder="Группа товара"  [(ngModel)]="goodsToAdd.g_id" name="gid">
-                <mat-option *ngFor="let group of groupArray" value="{{group.id}}" (click)="setRouterLink($event, group.routerlink)">{{group.groupname}}</mat-option>
+                <mat-option *ngFor="let group of groupArray" value="{{group.id}}" (click)="setFilterLink($event, group.routerlink)">{{group.groupname}}</mat-option>
               </mat-select>
             </mat-form-field>
             <!--end group-->
@@ -18,6 +18,12 @@
               <input matInput type="text" [(ngModel)]="goodsToAdd.title" name="title" placeholder="Название продукта">
             </mat-form-field>
             <!--title-->
+
+            <!--routerlink-->
+            <mat-form-field>
+              <input matInput type="text" [(ngModel)]="goodsToAdd.routerlink" name="routerlink" placeholder="Ссылка на товар">
+            </mat-form-field>
+            <!--routerlink-->
 
             <!--video-->
             <mat-form-field>

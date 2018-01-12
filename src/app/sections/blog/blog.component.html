@@ -1,21 +1,25 @@
-<div class="container d-flex align-items-center pt-5 ">
+<div class="container mcmh pt-5">
   <div class="col-12">
-    <h2 class="text-center">Блог</h2>
+    <h1 class="text-center">Блог</h1>
     <div *ngIf="blogArr?.length > 0">
-      <ul *ngFor="let blog of blogArr" class="list-group mt-3">
-        <li class="list-group-item">
-          <div id="blog-id-{{blog.id}}">
-            <div class="row">
-              <div class="col-12">
-                <h2>{{blog.title}} <span class="badge badge-secondary">{{blog.date}}</span></h2>
-              </div>
+      <ul *ngFor="let blog of blogArr" class="list-group">
+        <li class="list-group-item mb-3">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="blog-title">{{blog.title}}</h2>
             </div>
-            <div class="col-12" [innerHTML]="blog.textblog">
-            </div>
+          </div>
+          <hr>
+          <div class="col-12 blog-body">
+            <p [innerHTML]="blog.anons"></p>
+            <a [routerLink]="blog.linkstr">Читать...</a>
           </div>
         </li>
       </ul>
     </div>
+    <img src="assets/img/30.gif" alt="" *ngIf="!blogArr" class="mx-auto d-block" height="10">
   </div>
 </div>
 <app-footer></app-footer>
+
+

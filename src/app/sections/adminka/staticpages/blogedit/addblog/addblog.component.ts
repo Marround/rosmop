@@ -22,11 +22,12 @@ export class AddblogComponent implements OnInit {
     title: '',
     linkstr: '',
     textblog: '',
+    anons: ''
   };
-  public options: Object = {
-    placeholderText: 'Текст блога',
-    language: 'ru'
-  };
+  // public options: Object = {
+  //   placeholderText: 'Текст блога',
+  //   language: 'ru'
+  // };
   date = moment();
   constructor(private blogService: BlogService) { }
   addBlog() {
@@ -37,6 +38,7 @@ export class AddblogComponent implements OnInit {
       this.blog.title = '';
       this.blog.linkstr = '';
       this.blog.textblog = '';
+      this.blog.anons = '';
       this.blog.date = '';
       this.date =  moment();
     }

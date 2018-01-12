@@ -4,4 +4,5 @@ export interface News {
   title?: string;
   linkstr?: string;
   textnews?: string;
+  anons?: string;
 }

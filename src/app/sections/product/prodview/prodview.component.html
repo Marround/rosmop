@@ -1,0 +1,32 @@
+<div class="container-fluid mcmh mb-3" *ngIf="pageNotFound">
+  <div class="row mt-4 vw-100">
+    <img src="assets/img/30.gif" *ngIf="!product" class="mx-auto d-block" height="10">
+    <div class="container concard" *ngIf="product">
+      <div class="row">
+        <div class="col-10">
+          <h1 class="text-center product-title mt-3">{{product[0].title}}</h1>
+        </div>
+        <div class="col-2"><mat-icon class="close-button cursor-pointer" (click)="closeEPF()">close</mat-icon></div>
+      </div>
+      <hr>
+      <div class="row d-flex justify-content-center mt-3">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-4 col-xl-4">
+          <div class="catalog-slider">
+            <a href="{{activePhoto}}" data-lightbox="image-1" class="d-flex align-items-center">
+              <img src="{{activePhoto}}">
+            </a>
+            <ul>
+              <li class="catalog-item" *ngFor="let photo of photos" [style.backgroundImage]="'url('+ photo +')'" (click)="switchActivePhoto(photo)"></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-12 col-sm-12 col-md-12 col-lg-8 col-xl-8">
+          <div [innerHTML]="product[0].description" class="product-description"></div>
+          <!--<iframe width="560" height="315" [src]="getEmbed('https://www.youtube.com/embed/Okn1SzNhx-I')" frameborder="0" allowfullscreen></iframe>-->
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<app-notfound *ngIf="!pageNotFound"></app-notfound>
+<app-footer></app-footer>

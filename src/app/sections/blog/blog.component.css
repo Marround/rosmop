@@ -1,0 +1,25 @@
+.blog-title {
+  font-size: calc(.7rem + 1vw);
+  font-weight: 400;
+  line-height: 1.2;
+}
+h1 {
+  font-weight: 400;
+  line-height: 1.2;
+}
+@media (min-width: 400px) {
+  h1 {
+    font-size: calc(1.7rem + 1vw);
+  }
+  .blog-body {
+    font-size: calc(0.6em + 0.5vw);
+  }
+}
+@media (max-width: 399px) {
+  h1 {
+    font-size: calc(1em + 1vw);
+  }
+  .blog-body {
+    font-size: calc(0.7em + 0.5vw);
+  }
+}

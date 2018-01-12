@@ -2,6 +2,7 @@ export interface Goods {
   id?: string;
   g_id?: string;
   routerlink?: string;
+  filterlink?: string;
   title?: string;
   description?: string;
   video?: string;

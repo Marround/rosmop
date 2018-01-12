@@ -27,6 +27,7 @@ export class AddnewsComponent implements OnInit {
     title: '',
     linkstr: '',
     textnews: '',
+    anons: ''
   };
 
   constructor(private newsService: NewsService) { }
@@ -41,6 +42,7 @@ export class AddnewsComponent implements OnInit {
       this.newsOne.title = '';
       this.newsOne.linkstr = '';
       this.newsOne.textnews = '';
+      this.newsOne.anons = '';
       this.newsOne.date = '';
       this.date =  moment();
     }

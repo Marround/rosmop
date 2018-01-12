@@ -8,16 +8,25 @@ import {AuthComponent} from './auth/auth.component';
 import {AdminkaComponent} from './adminka/adminka.component';
 import {aspRouts} from './adminka/staticpages/index';
 import {AuthGuard} from '../service/adm-guard.service';
+import {ProdviewComponent} from './product/prodview/prodview.component';
+import {NewsviewComponent} from "./news/newsview/newsview.component";
+import {BlogviewComponent} from "./blog/blogview/blogview.component";
+import {NotfoundComponent} from "./notfound/notfound.component";
 
 export const routs = [
   {path: 'home', component: HomeSectionComponent},
   {path: 'news', component: NewsComponent},
-  {path: 'product', component: ProductComponent},
+  {path: 'news/:newsId', component: NewsviewComponent},
+  {path: 'product', redirectTo: '/product/mops', pathMatch: 'full'},
+  {path: 'product/:group', component: ProductComponent},
+  {path: 'product/:group/:prodview', component: ProdviewComponent},
   {path: 'readysolutions', component: ReadysolutionsComponent},
   {path: 'blog', component: BlogComponent},
+  {path: 'blog/:blogId', component: BlogviewComponent},
   {path: 'contacts', component: ContactsComponent},
   {path: 'auth', component: AuthComponent},
   {path: 'adminka', redirectTo: '/adminka/productedit', pathMatch: 'full'},
   {path: 'adminka', component: AdminkaComponent, canActivate: [AuthGuard], children: aspRouts},
-  {path: '', redirectTo: 'home', pathMatch: 'full'}
+  {path: '', redirectTo: 'home', pathMatch: 'full'},
+  {path: '**', component: NotfoundComponent},
 ]

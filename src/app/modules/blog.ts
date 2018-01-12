@@ -4,4 +4,5 @@ export interface Blog {
   title?: string;
   linkstr?: string;
   textblog?: string;
+  anons?: string;
 }

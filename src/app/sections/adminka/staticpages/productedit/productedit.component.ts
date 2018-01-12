@@ -84,7 +84,7 @@ export class ProducteditComponent implements OnInit, OnDestroy {
     $('#editproductform').collapse( 'hide' );
     this.goodsToUpdate = null;
   }
-  setRouterLink(event, routerlink) {
-    this.goodsToUpdate.routerlink = routerlink;
+  setFilterLink(event, filterlink) {
+    this.goodsToUpdate.filterlink = filterlink;
   }
 }

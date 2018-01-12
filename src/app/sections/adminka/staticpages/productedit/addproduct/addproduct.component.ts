@@ -54,8 +54,8 @@ export class AddproductComponent implements OnInit, OnDestroy {
     this.byappointmentSub.unsubscribe();
     this.materialSub.unsubscribe();
   }
-  setRouterLink(event, routerlink) {
-    this.goodsToAdd.routerlink = routerlink;
+  setFilterLink(event, filterlink) {
+    this.goodsToAdd.filterlink = filterlink;
   }
   addGoods() {
     this.productionService.addGoods(this.goodsToAdd);

@@ -13,6 +13,7 @@ export class ProductionService {
   // goods array
   goodsCollection: AngularFirestoreCollection<Goods>;
   goodsArray: Observable<Goods[]>;
+  goods: Observable<Goods>
   goodsDoc: AngularFirestoreDocument<Goods>;
   // goods end array
   // Byappointment

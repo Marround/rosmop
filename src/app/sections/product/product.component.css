@@ -1,0 +1,50 @@
+h1 {
+  font-weight: 400;
+  line-height: 1.2;
+}
+@media (min-width: 400px) {
+  h1 {
+    font-size: calc(1.7rem + 1vw);
+  }
+}
+@media (max-width: 399px) {
+  h1 {
+    font-size: calc(1em + 1vw);
+  }
+}
+.side-container {
+  float: left;
+  min-width: 250px;
+  max-width: 250px;
+  padding-left: 8px;
+}
+
+.vw-100 {
+  width: 100vw;
+}
+.goods-link {
+  text-decoration: none;
+  color: #495057;
+  font-size: 1rem;
+}
+
+.card-shadow {
+  box-shadow:0 3px 3px -2px rgba(0,0,0,.2),0 3px 4px 0 rgba(0,0,0,.14),0 1px 8px 0 rgba(0,0,0,.12);
+}
+.card-shadow:hover {
+  box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+  transition: box-shadow 0.3s ease-in-out;
+}
+
+.active {
+  background: #3097D1;
+  border-color: #3097D1;
+}
+.card-title {
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.2;
+}
+.title-block {
+  height: auto !important;
+}
