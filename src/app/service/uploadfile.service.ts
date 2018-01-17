@@ -21,7 +21,7 @@ export class UploadfileService {
     });
   }
   postFile(fileToUpload: File, sourcePath: string): Observable<boolean> {
-    const source = 'http://rosmop.ru/upload.php';
+    const source = 'http://marround.ru/upload.php';
     const formData: FormData = new FormData();
     formData.append('sPath', sourcePath);
     formData.append('file', fileToUpload, fileToUpload.name);

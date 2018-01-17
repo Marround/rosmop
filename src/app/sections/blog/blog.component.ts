@@ -20,6 +20,7 @@ export class BlogComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    window.scroll(0, 0);
     this.blogSub = this.blogService.getBlog().subscribe(blogArr => {
       this.blogArr = blogArr;
     });

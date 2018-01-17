@@ -1,9 +1,42 @@
 @import url(http://allfont.ru/allfont.css?fonts=roboto-thin);
 
 .landing-container {
-  width: 100%;
+  background: #fafafa url(/assets/img/main/bkg.svg) no-repeat 50% 0;
+  background-size: cover;
 }
 
+.landing-container {
+  width: 100%;
+}
+/*GLOBAL*/
+@media (min-width: 400px) {
+  h1 {
+    font-size: calc(1em + 5vw);
+  }
+}
+
+@media (max-width: 399px) {
+  h1 {
+    font-size: calc(0.7em + 5vw);
+  }
+}
+h3 {
+  font-weight: 400;
+  line-height: 1.2;
+}
+@media (min-width: 400px) {
+  h3 {
+    font-size: calc(1.7rem + 1vw);
+  }
+}
+@media (max-width: 399px) {
+  h3 {
+    font-size: calc(1em + 1vw);
+  }
+}
+/*END GLOBAL*/
+
+/*main*/
 .main-lang {
   height: 100vh;
   width: 100%;
@@ -26,7 +59,6 @@
 }
 .org-label>h1 {
   width: 100%;
-  font-size: 150px;
 }
 
 .org-label-blue {
@@ -38,60 +70,63 @@
 }
 .org-label>h3 {
   font-family: 'Roboto Thin', arial;
-  font-size: 50px;
+  font-size: calc(1em + 2vw);
   font-weight: 600;
   color: #333;
 }
+/*end main*/
 
-.about-org {
-  height: 446px;
-  width: 100%;
-  background: radial-gradient(60% 50%, rgba(255,255,255,0), rgb(255,255,255)), url(/assets/img/main/blue.png) no-repeat;
-  background-position: center;
-  background-size: cover;
-  display: flex;
-  overflow: hidden;
+/*six-reasons*/
+.six-reasons {
+  padding: 3rem 0 3rem 0;
 }
+/*end six-reasons*/
 
-.flex_box {
-  height: 446px;
-  width: 100%;
-  display: flex;
+/*ready-solutions*/
+.ready-solutions {
+  padding: 3rem 0 3rem 0;
 }
+/*end ready-solutions*/
 
-.flex-container {
-  margin: auto;
+/*we-are-recommended*/
+.we-are-recommended {
+  padding: 3rem 0 3rem 0;
 }
+/*утв we-are-recommended*/
 
-.reviews-org {
-  height: 446px;
-  width: 100%;
-  background: radial-gradient(60% 50%, rgba(255,255,255,0), rgb(255,255,255)), url(/assets/img/main/green.png) no-repeat;
-  background-position: center;
-  background-size: cover;
-  display: flex;
+/*application-area*/
+.application-area {
+  padding: 3rem 0 3rem 0;
 }
+/*end application-area*/
 
-.reviews-org-carousel-txt{
-  background: radial-gradient(40% 50%, rgb(255,255,255), rgba(255,255,255,0));
-  padding: 5px 15px;
+/*reviews*/
+.reviews {
+  padding: 3rem 0 3rem 0;
 }
-.reviews-org-carousel-txt h3 {
-  color: #333;
-  font-size: 40px;
-  font-weight: 600;
+.reviews-title {
+  background: url(/assets/img/main/border.png) no-repeat center bottom;
+  padding-bottom: 48px;
 }
-.reviews-org-carousel-txt p {
-  color: #333;
-  font-size: 20px;
-  font-weight: 600;
+.review-card-img {
+  max-width: 100px;
 }
-
-.products-org {
-  height:  446px;
-  width: 100%;
-  background: radial-gradient(60% 50%, rgba(255,255,255,0), rgb(255,255,255)), url(/assets/img/main/orange.png) no-repeat;
-  background-position: center;
-  background-size: cover;
-  display: flex;
+.reviews-card {
+  background-color: rgba(255,255,255,0);
+  padding: 0 7vw 0 7vw;
+  border: none;
 }
+.review-card-content {
+  text-align: center;
+  font-size: 1em;
+}
+.reviews-card-uator {
+  border-top: solid 1px #6f6f6f;
+  border-bottom: solid 1px #6f6f6f;
+}
+@media (min-width: 768px) {
+  .reviews-card-uator {
+    width: 50%;
+  }
+}
+/*end reviews*/

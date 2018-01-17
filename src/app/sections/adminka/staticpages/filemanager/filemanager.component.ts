@@ -36,7 +36,7 @@ export class FilemanagerComponent implements OnDestroy {
     this.paginatorInit.nextPageLabel = 'Слудущая страница';
 
     // load file list and insert list to table paginator
-    this.reloadFiles = this.upFile.getFileList('http://rosmop.ru/getimagefiles.php', this.selected).subscribe((arr: FileData[]) => {
+    this.reloadFiles = this.upFile.getFileList('http://marround.ru/getimagefiles.php', this.selected).subscribe((arr: FileData[]) => {
       this.sourceFileList = arr;
       this.fileData = new MatTableDataSource(this.sourceFileList);
       this.fileData.paginator = this.paginator;
@@ -55,7 +55,7 @@ export class FilemanagerComponent implements OnDestroy {
 
   updateFileData() {
     this.reloadFiles.unsubscribe();
-    this.upFile.getFileList('http://rosmop.ru/getimagefiles.php', this.selected).subscribe((arr: FileData[]) => {
+    this.upFile.getFileList('http://marround.ru/getimagefiles.php', this.selected).subscribe((arr: FileData[]) => {
       this.sourceFileList = arr;
       this.fileData = new MatTableDataSource(this.sourceFileList);
       this.fileData.paginator = this.paginator;

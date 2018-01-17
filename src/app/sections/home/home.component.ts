@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {Meta, Title} from '@angular/platform-browser';
-// declare let $: any;
+import {LoadJsonService} from '../../service/loadjson.service';
+declare let $: any;
 
 @Component({
   moduleId: module.id,
@@ -10,19 +11,35 @@ import {Meta, Title} from '@angular/platform-browser';
 })
 
 export class HomeSectionComponent implements OnInit {
-  constructor(private title: Title, private meta: Meta) {
+  reviewsUrl = '/assets/json/reviews.json';
+  reviewsArr: Reviews[];
+  errorMessage: string;
+
+  constructor(private title: Title, private meta: Meta, private jsonService: LoadJsonService) {
     this.title.setTitle('Росмоп - Белгород');
     this.meta.updateTag({name: 'keywords', content: 'Росмоп, моп, товары для клининга'});
     this.meta.updateTag({name: 'description', content: 'Производство товаров для клининга'});
   }
 
   ngOnInit() {
+    this.jsonService.getJSON(this.reviewsUrl).subscribe(data => {
+      this.reviewsArr = data.reviews;
+      console.log(this.reviewsArr);
+    }, error => {
+      this.errorMessage = < any > error;
+    });
     window.scroll(0, 15);
     window.scroll(0, 0);
 
-    // $('.carousel').carousel({
-    //   interval: 5000,
-    //   pause: false
-    // });
+    $('#reviewsCarousel').carousel({
+      interval: 10000,
+      pause: false
+    });
   }
+}
+export interface Reviews {
+  photo: string;
+  review: string;
+  name: string;
+  org: string;
 }

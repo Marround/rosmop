@@ -20,6 +20,7 @@ export class NewsComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    window.scroll(0, 0);
     this.newsSub = this.newsService.getNews().subscribe(newsArr => {
       this.newsArr = newsArr;
     });

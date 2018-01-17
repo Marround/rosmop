@@ -73,12 +73,24 @@
         <mat-icon aria-label="Example icon-button with a heart icon">menu</mat-icon>
       </button>
       <mat-menu #smbottommenu="matMenu">
-        <button mat-menu-item (click)="goToRout('contacts')">Контакты</button>
-        <button mat-menu-item (click)="goToRout('blog')">Блог</button>
-        <button mat-menu-item (click)="goToRout('readysolutions')">Готовые решения</button>
-        <button mat-menu-item (click)="goToRout('product')">Продукция</button>
-        <button mat-menu-item (click)="goToRout('news')">Новости</button>
-        <button mat-menu-item (click)="goToRout('home')">На главную</button>
+        <a mat-menu-item routerLink="/contacts" routerLinkActive="active">
+          Контакты
+        </a>
+        <a mat-menu-item routerLink="/blog" routerLinkActive="active">
+          Блог
+        </a>
+        <a mat-menu-item routerLink="/readysolutions" routerLinkActive="active">
+          Готовые решения
+        </a>
+        <a mat-menu-item routerLink="/product" routerLinkActive="active">
+          Продукция
+        </a>
+        <a mat-menu-item routerLink="/news" routerLinkActive="active">
+          Новости
+        </a>
+        <a mat-menu-item routerLink="/home" routerLinkActive="active">
+          РосМоп
+        </a>
       </mat-menu>
 
     </div>

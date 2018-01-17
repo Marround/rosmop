@@ -71,6 +71,7 @@ export class ProductComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    window.scroll(0, 0);
     this.routeSubscription = this.route.params.subscribe((params: Params) => {
       this.group = params['group'];
       if (this.goodsArray) {
