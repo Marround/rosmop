@@ -1,6 +1,9 @@
 .vw-100 {
   width: 100vw;
 }
+.blog-body {
+  padding: 0 5px;
+}
 h1 {
   font-weight: 400;
   line-height: 1.2;
@@ -18,10 +21,14 @@ h1 {
     font-size: calc(1em + 1vw);
   }
   .blog-body {
-    font-size: 0.7em;
-    line-height: 1;
+    font-size: 0.73em;
+    line-height: 1.2;
   }
 }
 .blog-title {
   font-size: calc(.7rem + 1vw);
+}
+.con-field {
+  padding: 0 5px;
+  background-color: white;
 }

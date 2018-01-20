@@ -7,6 +7,7 @@ import {Blog} from '../../../../../modules/blog';
 
 
 @Component({
+  moduleId: module.id,
   selector: 'app-addblog',
   templateUrl: './addblog.component.html',
   styleUrls: ['./addblog.component.css'],

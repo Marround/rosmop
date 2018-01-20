@@ -1,23 +1,21 @@
-<div class="container mcmh pt-5">
-  <div class="col-12">
-    <h1 class="text-center">Блог</h1>
-    <div *ngIf="blogArr?.length > 0">
-      <ul *ngFor="let blog of blogArr" class="list-group">
-        <li class="list-group-item mb-3">
-          <div class="row">
-            <div class="col-12">
-              <h2 class="blog-title">{{blog.title}}</h2>
+<div class="container mcmh">
+  <div class="row vw-100">
+    <div class="col">
+      <h1 class="text-center">Блог</h1>
+      <div *ngIf="blogArr?.length > 0">
+        <ul *ngFor="let blog of blogArr" class="list-group">
+          <li class="list-group-item mb-3">
+            <h2 class="blog-title">{{blog.title}}</h2>
+            <hr>
+            <div class="blog-body">
+              <p [innerHTML]="blog.anons"></p>
+              <a [routerLink]="blog.linkstr">Читать...</a>
             </div>
-          </div>
-          <hr>
-          <div class="col-12 blog-body">
-            <p [innerHTML]="blog.anons"></p>
-            <a [routerLink]="blog.linkstr">Читать...</a>
-          </div>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </div>
+      <img src="assets/img/30.gif" alt="" *ngIf="!blogArr" class="mx-auto d-block" height="10">
     </div>
-    <img src="assets/img/30.gif" alt="" *ngIf="!blogArr" class="mx-auto d-block" height="10">
   </div>
 </div>
 <app-footer></app-footer>

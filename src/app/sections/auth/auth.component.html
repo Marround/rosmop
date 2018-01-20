@@ -27,7 +27,8 @@
                 </mat-error>
               </mat-form-field>
               <!--end password-->
-              <button mat-raised-button color="primary" type="submit" [disabled]="!userForm.valid">Войти</button>
+              <button mat-raised-button color="primary" type="submit">Войти</button>
+              <!--<button mat-raised-button color="primary" type="submit" [disabled]="!userForm.valid">Войти</button>-->
               <mat-error *ngIf="loginError">{{loginError}}</mat-error>
             </form>
           </mat-card-content>

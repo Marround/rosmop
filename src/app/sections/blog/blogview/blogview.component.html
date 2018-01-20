@@ -1,18 +1,14 @@
-<div class="container mcmh pt-5 mb-3" *ngIf="pageNotFound">
-  <div class="row vw-100">
-    <div class="col-12">
-      <div class="card" *ngIf="blogOne">
-        <div class="card-title">
-          <h1 class="text-center blog-title mt-4">{{blogOne.title}}</h1>
-        </div>
-        <hr>
-        <div class="card-body">
-          <div class="blog-body" [innerHTML]="blogOne.textblog"></div>
-        </div>
+<div class="container mcmh mb-3" *ngIf="pageNotFound">
+  <div class="row vw-100 con-field">
+    <div class="" *ngIf="blogOne">
+      <div class="card-title pl-1 pr-1">
+        <h1 class="text-center blog-title mt-4">{{blogOne.title}}</h1>
       </div>
-      <div class="col-12" *ngIf="!blogOne">
-        <img src="assets/img/30.gif" class="mx-auto d-block" height="10">
-      </div>
+      <hr>
+      <div class="blog-body" [innerHTML]="blogOne.textblog"></div>
+    </div>
+    <div class="col-12" *ngIf="!blogOne">
+      <img src="assets/img/30.gif" class="mx-auto d-block" height="10">
     </div>
   </div>
 </div>

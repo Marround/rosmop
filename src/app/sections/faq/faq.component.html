@@ -1,0 +1,21 @@
+<div class="container ptbh">
+  <div class="row">
+    <div class="col">
+      <h1 class="faq-title text-center">FAQ</h1>
+    </div>
+  </div>
+  <div *ngIf="faqArr?.length > 0" class="col w-100">
+    <mat-accordion>
+      <mat-expansion-panel *ngFor="let faq of faqArr">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            {{faq.question}}
+          </mat-panel-title>
+        </mat-expansion-panel-header>
+        <div [innerHTML]="faq.answer" class="faq-body"></div>
+      </mat-expansion-panel>
+    </mat-accordion>
+  </div>
+</div>
+
+<app-footer></app-footer>

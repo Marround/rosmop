@@ -1,15 +1,11 @@
-<div class="container mcmh pt-5 mb-3" *ngIf="pageNotFound">
-  <div class="row vw-100">
-    <div class="col">
-      <div class="card" *ngIf="newsOne">
-        <div class="card-title">
-          <h1 class="text-center news-title mt-4 pr-2 pl-2">{{newsOne.title}}</h1>
-        </div>
-        <hr>
-        <div class="card-body">
-          <div class="news-body" [innerHTML]="newsOne.textnews"></div>
-        </div>
+<div class="container mcmh mb-3" *ngIf="pageNotFound">
+  <div class="row vw-100 con-field">
+    <div class="" *ngIf="newsOne">
+      <div class="card-title">
+        <h1 class="text-center news-title mt-4 pr-2 pl-2">{{newsOne.title}}</h1>
       </div>
+      <hr>
+      <div class="news-body" [innerHTML]="newsOne.textnews"></div>
     </div>
     <div class="col-12" *ngIf="!newsOne">
       <img src="assets/img/30.gif" class="mx-auto d-block" height="10">

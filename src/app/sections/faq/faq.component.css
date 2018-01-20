@@ -1,8 +1,10 @@
 .vw-100 {
   width: 100vw;
 }
-.news-body {
-  padding: 0 5px;
+.faq-title {
+  font-size: calc(.7rem + 1vw);
+  font-weight: 400;
+  line-height: 1.2;
 }
 h1 {
   font-weight: 400;
@@ -11,24 +13,20 @@ h1 {
 @media (min-width: 400px) {
   h1 {
     font-size: calc(1.7rem + 1vw);
+    line-height: 1.2;
   }
-  .news-body {
+  .faq-body {
     font-size: calc(0.6em + 0.5vw);
+    line-height: 1.2;
   }
 }
 @media (max-width: 399px) {
   h1 {
-    font-size: calc(1em + 1vw);
+    font-size: 1em;
+    line-height: 1.2;
   }
-  .news-body {
+  .faq-body {
     font-size: 0.73em;
     line-height: 1.2;
   }
-}
-.news-title {
-  font-size: calc(.7rem + 1vw);
-}
-.con-field {
-  padding: 0 5px;
-  background-color: white;
 }

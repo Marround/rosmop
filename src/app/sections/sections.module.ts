@@ -2,7 +2,8 @@ import { NgModule } from '@angular/core';
 import { CommonModule} from '@angular/common';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-  MatButtonModule, MatCardModule, MatFormFieldModule, MatIconModule, MatInputModule, MatListModule, MatSelectModule,
+  MatButtonModule, MatCardModule, MatExpansionModule, MatFormFieldModule, MatIconModule, MatInputModule, MatListModule,
+  MatSelectModule,
   MatTabsModule
 } from '@angular/material';
 
@@ -24,6 +25,7 @@ import { ProdviewComponent } from './product/prodview/prodview.component';
 import { NewsviewComponent } from './news/newsview/newsview.component';
 import { BlogviewComponent } from './blog/blogview/blogview.component';
 import { NotfoundComponent } from './notfound/notfound.component';
+import { FaqComponent } from './faq/faq.component';
 
 
 @NgModule({
@@ -40,6 +42,7 @@ import { NotfoundComponent } from './notfound/notfound.component';
     MatInputModule,
     MatFormFieldModule,
     MatSelectModule,
+    MatExpansionModule,
     FormsModule,
     ReactiveFormsModule
   ],
@@ -49,14 +52,14 @@ import { NotfoundComponent } from './notfound/notfound.component';
     FooterComponent, NewsComponent, BlogComponent,
     ReadysolutionsComponent, AuthComponent, AdminkaComponent,
     ProdviewComponent, NewsviewComponent, BlogviewComponent,
-    NotfoundComponent
+    NotfoundComponent, FaqComponent
   ],
   exports: [
     HomeSectionComponent, ProductComponent, ContactsComponent,
     FooterComponent, NewsComponent, BlogComponent,
     ReadysolutionsComponent, AuthComponent, AdminkaComponent,
     ProdviewComponent, NewsviewComponent, BlogviewComponent,
-    NotfoundComponent
+    NotfoundComponent, FaqComponent
   ]
 })
 

@@ -1,22 +1,20 @@
-<div class="container mcmh pt-5">
-  <div class="col-12">
-    <h1 class="text-center">Новости</h1>
-    <img src="assets/img/30.gif" *ngIf="!newsArr" class="mx-auto d-block" height="10">
-    <div *ngIf="newsArr?.length > 0">
-      <ul *ngFor="let news of newsArr" class="list-group">
-        <li class="list-group-item mb-3">
-          <div class="row">
-            <div class="col-12">
-              <h2 class="news-title">{{news.title}}</h2>
+<div class="container mcmh">
+  <div class="row vw-100">
+    <div class="col">
+      <h1 class="text-center">Новости</h1>
+      <img src="assets/img/30.gif" *ngIf="!newsArr" class="mx-auto d-block" height="10">
+      <div *ngIf="newsArr?.length > 0">
+        <ul *ngFor="let news of newsArr" class="list-group">
+          <li class="list-group-item mb-3">
+            <h2 class="news-title">{{news.title}}</h2>
+            <hr>
+            <div class="news-body">
+              <p [innerHTML]="news.anons"></p>
+              <a [routerLink]="news.linkstr">Читать...</a>
             </div>
-          </div>
-          <hr>
-          <div class="col-12 news-body">
-            <p [innerHTML]="news.anons"></p>
-            <a [routerLink]="news.linkstr">Читать всю новость</a>
-          </div>
-        </li>
-      </ul>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </div>

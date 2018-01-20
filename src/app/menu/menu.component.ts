@@ -32,9 +32,9 @@ export class MenuComponent implements OnInit {
       display: 'instagram.com/uname'
     },
     {
-      link: 'http://twitter.com',
-      image: '/assets/img/socialico/twitter.png',
-      display: 'twitter.com/uname'
+      link: 'http://youtube.com',
+      image: '/assets/img/socialico/youtube.png',
+      display: 'youtube.com'
     },
     {
       link: 'http://t.me',
@@ -58,12 +58,12 @@ export class MenuComponent implements OnInit {
     }
     ];
 
-  constructor(public auth: AuthService, private router: Router) { }
+  constructor(public auth: AuthService, public router: Router) { }
 
   ngOnInit() {
   }
 
-  goToRout(r) {
+  goToRout(event, r) {
     this.router.navigate([r]);
   }
 

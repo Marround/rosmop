@@ -1,0 +1,29 @@
+<div class="container ptbh">
+  <div class="row pt-3">
+    <div class="col">
+      <button class="btn btn-success" type="button" data-toggle="collapse" data-target="#addblogform" aria-expanded="false" aria-controls="collapseExample">
+        Создать FAQ
+      </button>
+      <div class="collapse" id="addblogform">
+        <app-addfaq></app-addfaq>
+      </div>
+    </div>
+  </div>
+  <div class="row pt-3">
+    <div *ngIf="faqArr?.length > 0" class="col w-100">
+      <mat-accordion>
+        <mat-expansion-panel *ngFor="let faq of faqArr">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              {{faq.question}}
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <div class="d-flex justify-content-end">
+            <mat-icon (click)="deleteFAQ($event, faq)" class="cursor-pointer">delete</mat-icon>
+          </div>
+          <div [innerHTML]="faq.answer"></div>
+        </mat-expansion-panel>
+      </mat-accordion>
+    </div>
+  </div>
+</div>

@@ -1,3 +1,6 @@
+.vw-100 {
+  width: 100vw;
+}
 .news-title {
   font-size: calc(.7rem + 1vw);
   font-weight: 400;
@@ -10,16 +13,20 @@ h1 {
 @media (min-width: 400px) {
   h1 {
     font-size: calc(1.7rem + 1vw);
+    line-height: 1.2;
   }
   .news-body {
     font-size: calc(0.6em + 0.5vw);
+    line-height: 1.2;
   }
 }
 @media (max-width: 399px) {
   h1 {
-    font-size: calc(1em + 1vw);
+    font-size: 1em;
+    line-height: 1.2;
   }
   .news-body {
-    font-size: calc(0.7em + 0.5vw);
+    font-size: 0.73em;
+    line-height: 1.2;
   }
 }

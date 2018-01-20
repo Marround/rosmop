@@ -1,5 +1,5 @@
 nav {
-  height: 56px;
+  height: 64px;
   position: fixed;
   z-index: 10;
   padding: 8px 16px;
@@ -8,7 +8,6 @@ nav {
   width: 100%;
   background-color: rgba(255,255,255, .2);
 }
-
 .nav-colored {
   background-color: hsla(0,0%,100%,.87);
   animation: emergence 0.4s ease-in-out;
@@ -28,6 +27,7 @@ nav a {
   text-decoration: none;
   padding: 0 5px;
   cursor: pointer;
+  font-size: 0.92rem;
 }
 
 a:hover, .active {
@@ -54,16 +54,16 @@ a:hover, .active {
 }
 @media (max-width: 650px) {
   .main-menu {
-    display: none;
+    display: none !important;
   }
   .sm-bottom-menu {
     display: block;
   }
 }
 @media (min-width: 900px) {
-  .social-link-lg {
-    display: block;
-  }
+  /*.social-link-lg {*/
+    /*display: block;*/
+  /*}*/
   .social-image-lg {
     display: block;
   }

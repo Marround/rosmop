@@ -1,38 +1,53 @@
 <nav id="main-menu" class="align-items-center">
-  <div class="main-menu">
-    <a routerLink="/home" routerLinkActive="active">
-      РосМоп
-    </a>
-    <a routerLink="/news" routerLinkActive="active">
-      Новости
-    </a>
-    <a routerLink="/product" routerLinkActive="active">
-      Продукция
-    </a>
-    <a routerLink="/readysolutions" routerLinkActive="active">
-      Готовые решения
-    </a>
-    <a routerLink="/blog" routerLinkActive="active">
-      Блог
-    </a>
-    <a routerLink="/contacts" routerLinkActive="active">
-      Контакты
-    </a>
+  <div class="main-menu d-flex justify-content-center">
+    <div class="d-inline-block">
+      <a routerLink="/">
+        <img src="/assets/img/logo_menu.png" alt="logo" height="48">
+      </a>
+    </div>
   </div>
-
+  <div class="flex-spacer"></div>
+  <div class="main-menu d-flex justify-content-center">
+    <div class="d-inline-block">
+      <a routerLink="/news" routerLinkActive="active">
+        Новости
+      </a>
+      <a routerLink="/product" routerLinkActive="active">
+        Продукция
+      </a>
+      <a routerLink="/readysolutions" routerLinkActive="active">
+        Готовые решения
+      </a>
+      <br>
+      <a routerLink="/blog" routerLinkActive="active">
+        Блог
+      </a>
+      <a routerLink="/faq" routerLinkActive="active">
+        FAQ
+      </a>
+      <a routerLink="/contacts" routerLinkActive="active">
+        Контакты
+      </a>
+    </div>
+  </div>
+  <!--<button mat-raised-button color="accent">Заказать консультацию</button>-->
   <div class="flex-spacer"></div>
 
-  <a *ngFor="let sociallink of sociallinks" href="{{sociallink.link}}" target="_blank" class="social-link-lg">
-    <img src="{{sociallink.image}}" width="24" class="social-image-lg">
-  </a>
-
+  <div class="d-flex flex-column">
+    <div>
+      <a *ngFor="let sociallink of sociallinks" href="{{sociallink.link}}" target="_blank" class="d-inline-block social-link-lg">
+        <img src="{{sociallink.image}}" width="24" class="social-image-lg">
+      </a>
+    </div>
+    <span class="text-right social-link-lg text-secondary">Есть вопросы? <a href="tel:+74722225010">+7 (4722) 22-50-10</a></span>
+  </div>
   <div class="social-links-button d-flex justify-content-center">
     <a [matMenuTriggerFor]="socialmenu">
       <mat-icon>forum</mat-icon>
     </a>
     <mat-menu #socialmenu="matMenu">
       <a *ngFor="let sociallink of sociallinks" href="{{sociallink.link}}" target="_blank" class="social-link">
-        <img src="{{sociallink.image}}" width="24" class="">
+        <img src="{{sociallink?.image}}" width="24" class="">
         {{sociallink.display}}
       </a>
     </mat-menu>
@@ -42,22 +57,26 @@
     <mat-icon>account_circle</mat-icon>
   </a>
   <mat-menu #menu="matMenu">
-    <button mat-menu-item *ngIf="auth.user | async" (click)="goToRout('adminka/productedit')">
+    <button mat-menu-item *ngIf="auth.user | async" (click)="goToRout($event, 'adminka/productedit')">
       <span>Редактировать товары</span>
     </button>
-    <button mat-menu-item *ngIf="auth.user | async" (click)="goToRout('adminka/newsedit')">
+    <button mat-menu-item *ngIf="auth.user | async" (click)="goToRout($event, 'adminka/newsedit')">
       <span>Редактировать новости</span>
     </button>
-    <button mat-menu-item *ngIf="auth.user | async" (click)="goToRout('adminka/blogedit')">
+    <button mat-menu-item *ngIf="auth.user | async" (click)="goToRout($event, 'adminka/blogedit')">
       <span>Редактировать блог</span>
     </button>
-    <button mat-menu-item *ngIf="auth.user | async" (click)="goToRout('adminka/filemanager')">
+    <button mat-menu-item *ngIf="auth.user | async" (click)="goToRout($event, 'adminka/faqedit')">
+      <span>Редактировать FAQ</span>
+    </button>
+    <button mat-menu-item *ngIf="auth.user | async" (click)="goToRout($event, 'adminka/filemanager')">
       <span>Файловый менеджер</span>
     </button>
     <button mat-menu-item *ngIf="auth.user | async" (click)="logOut()">
       <span>Выход</span>
     </button>
   </mat-menu>
+
 </nav>
 
 <div class="sm-bottom-menu w-100">
@@ -73,24 +92,12 @@
         <mat-icon aria-label="Example icon-button with a heart icon">menu</mat-icon>
       </button>
       <mat-menu #smbottommenu="matMenu">
-        <a mat-menu-item routerLink="/contacts" routerLinkActive="active">
-          Контакты
-        </a>
-        <a mat-menu-item routerLink="/blog" routerLinkActive="active">
-          Блог
-        </a>
-        <a mat-menu-item routerLink="/readysolutions" routerLinkActive="active">
-          Готовые решения
-        </a>
-        <a mat-menu-item routerLink="/product" routerLinkActive="active">
-          Продукция
-        </a>
-        <a mat-menu-item routerLink="/news" routerLinkActive="active">
-          Новости
-        </a>
-        <a mat-menu-item routerLink="/home" routerLinkActive="active">
-          РосМоп
-        </a>
+        <button mat-menu-item (click)="router.navigate(['contacts'])">Контакты</button>
+        <button mat-menu-item (click)="router.navigate(['blog'])">Блог</button>
+        <button mat-menu-item (click)="router.navigate(['readysolutions'])">Готовые решения</button>
+        <button mat-menu-item (click)="router.navigate(['product'])">Продукция</button>
+        <button mat-menu-item (click)="router.navigate(['news'])">Новости</button>
+        <button mat-menu-item (click)="router.navigate(['home'])">На главную</button>
       </mat-menu>
 
     </div>

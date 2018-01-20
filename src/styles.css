@@ -1,6 +1,7 @@
 body {
   background-color: #f5f7f8 !important;
   overflow-y: scroll;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
 }
 .cursor-pointer {
   cursor: pointer;
@@ -9,13 +10,19 @@ body {
 .mcmh {
   min-height: calc(100vh - 154px);
   width: 100%;
-  padding-top: 56px;
+  padding-top: 64px;
   background-position: center;
   background-size: cover;
   display: flex;
   position: relative;
 }
 .ptbh {
-  padding-top: 56px;
+  padding-top: 64px;
   min-height: calc(100vh - 154px);
+}
+button:active, button:focus {
+  outline: none !important;
+}
+button::-moz-focus-inner {
+  border: 0 !important;
 }
